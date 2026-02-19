@@ -1,3 +1,737 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ===== ログアウト画面専用スタイル ===== */
+
+/* ヘッダー全体を中央寄せ */
+.logout-header {
+  text-align: center;
+  margin-bottom: 40px; /* ボックスとの距離をしっかり取る */
+}
+
+/* ロゴ画像のサイズを大きくし、白っぽく見せる（必要に応じて） */
+.logout-logo img {
+  width: 220px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 「Social Network Service」の文字スタイル */
+.logout-sub-text {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: -10px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+/* ログイン画面全体の背景 */
+.logout-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logout-logo img {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.logout-sub-text {
+  font-size: 32px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.login-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1872b9 0%, #3e9adb 40%, #e8e367 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-box {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 40px 60px;
+  border-radius: 10px;
+  width: 520px;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* ===== 入力フォーム（統合版） ===== */
+
+.welcome-text {
+  font-size: 18px;
+  margin-bottom: 30px;
+  display: block;
+  letter-spacing: 0.05em;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.input-group:last-child {
+  margin-bottom: 0;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 350;
+  color: white;
+}
+
+.input-group .input {
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  border-radius: 4px;
+  border: none;
+  box-sizing: border-box;
+  color: #333 !important;
+  background-color: white !important;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-group .input:focus {
+  border: 2px solid #1e73be;
+}
+
+/* オートコンプリート対策（継続） */
+.input-group .input:-webkit-autofill {
+  -webkit-text-fill-color: #333;
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+/* ボタンの配置とデザイン */
+.submit-container {
+  text-align: right;
+  margin-top: 30px;
+}
+
+.btn-red {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 10px 35px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.btn-red:hover {
+  background-color: #dc2626;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
+}
+
+.register-link {
+  margin-top: 40px;
+}
+
+.register-link a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+/* ===== 登録完了画面専用 ===== */
+
+/* 「ようこそ！」メッセージ */
+.added-message {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* 登録完了の詳細説明 */
+.added-info {
+  margin-bottom: 40px;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* ログイン画面へ戻るボタンの幅を調整（文字数に合わせて） */
+#clear .btn-red {
+  padding: 12px 60px;
+  font-size: 16px;
+}
+
+/* ===== ヘッダー全体 ===== */
+#head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 10px 40px;
+    background-color: #1e73be; /* ヘッダーの青色 */
+    position: relative;
+    z-index: 1000;
+}
+
+/* ロゴ画像のサイズ調整 */
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* ===== サイドバーのデザイン ===== */
+#side-bar {
+    border-left: 1px solid #ddd;
+    background-color: white;
+}
+
+#confirm {
+    padding: 20px;
+}
+
+.side-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 0 10px;
+}
+
+.side-btn-container {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.side-search-container {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+/* 共通の青ボタンデザイン */
+.btn-blue {
+    display: inline-block;
+    background-color: #1e73be;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.btn-blue:hover {
+    background-color: #0b3c8c;
+    color: white;
+}
+
+/* ユーザー検索ボタンだけ少し大きくする */
+.search-btn {
+    width: 80%;
+    padding: 12px 0;
+}
+
+/* ユーザーエリアの配置 */
+.nav-user {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%; /* 親の高さに合わせる */
+}
+
+.nav-trigger {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    color: white;
+}
+
+/* 矢印のデザイン（CSSで作成） */
+.arrow {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(135deg); /* 下向き固定 */
+    margin-bottom: 5px;
+}
+
+/* 表示時の矢印 */
+.arrow.open {
+    transform: rotate(-45deg); /* 上向き */
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* ユーザーアイコン（画像右側の丸いアイコン） */
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* ===== ドロップダウンメニューの枠 ===== */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: -40px;
+    width: 200px;
+    background-color: white;
+    border: 1px solid #1e73be;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 9999;
+    display: block !important; 
+}
+
+/* Alpine.jsのx-showが効くように */
+.dropdown-menu[style*="display: none"] {
+    display: none !important;
+}
+
+/* 各項目のスタイル */
+.dropdown-menu li {
+    width: 100%;
+    border-bottom: 1px solid #1e73be;
+    display: block; /* flex から block に変更 */
+}
+
+/* フォームの設定：余計な隙間をゼロにする */
+.logout-form {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+}
+
+/* --- リンクとボタンの基本スタイル --- */
+.dropdown-menu a,
+.dropdown-menu button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    color: #1e73be;
+    font-size: 16px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-family: inherit;
+    transition: all 0.2s;
+    /* line-height: 60px;  ← これは削除するかコメントアウトしてください */
+}
+
+/* --- ホバー時の挙動 --- */
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+    background-color: #1e73be !important;
+    color: white !important;
+}
+
+/* --- 現在のページのスタイル（アクティブ） --- */
+.dropdown-menu li.active a {
+    background-color: #1e73be;
+    color: white !important;
+}
+
+/* アクティブな状態でホバーした時 */
+.dropdown-menu li.active a:hover {
+    background-color: #0b3c8c !important;
+}
+
+/* ログアウトフォームのマージンリセット */
+.logout-form {
+    margin: 0;
+    padding: 0;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+/* ===== トップページ投稿フォームのデザイン ===== */
+
+.post-block {
+    padding: 30px 80px;
+    border-bottom: 8px solid #ddd; /* フォーム下の太い区切り線 */
+    background-color: white;
+}
+
+.post-form-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    padding-bottom: 50px; /* ボタン用の余白 */
+}
+
+.user-icon-area .user-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.input-area {
+    flex-grow: 1; /* 入力欄を広げる */
+}
+
+.post-textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    color: #333;
+    padding: 10px 0;
+}
+
+/* プレースホルダーの色を薄く */
+.post-textarea::placeholder {
+    color: #ccc;
+}
+
+.submit-area {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.post-submit-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.post-submit-btn:hover {
+    opacity: 0.7;
+}
+
+.post-submit-btn img {
+    width: 50px; /* 紙飛行機アイコンのサイズ */
+    height: auto;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* 一覧表示のスタイル */
+.post-item {
+    display: flex;
+    padding: 20px 40px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    min-height: 100px;
+}
+
+.post-item-icon {
+    margin-right: 20px;
+}
+
+.post-item-content {
+    flex-grow: 1; /* コンテンツエリアを広げる */
+    color: #333; /* 文字色を濃いグレーにする */
+}
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.post-body {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* 編集・削除ボタンの親要素 */
+.post-actions {
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.post-actions img {
+    width: 35px;
+    height: auto;
+}
+.modal {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+}
+.modal__bg {
+    background: rgba(0,0,0,0.5);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+
+.modal__content {
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    border-radius: 10px;
+}
+.modal_post {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+/* 削除アイコンのホバー設定 */
+.delete-link .trash-icon.hover {
+    display: none;
+}
+
+.delete-link .trash-icon.default {
+    display: inline-block;
+}
+
+.delete-link:hover .trash-icon.default {
+    display: none; /* 通常版を消す */
+}
+
+.delete-link:hover .trash-icon.hover {
+    display: inline-block; /* ホバー版を出す */
+}
+
+.trash-icon {
+    width: 35px;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* ===== 編集ボタンのホバー（画像差し替え版） ===== */
+.js-modal-open img:hover {
+    /* 編集ボタンも画像ごと変える場合（srcを強制置換） */
+    content: url("../images/edit-h.png");
+    cursor: pointer;
+}
+
+/* ===== 検索画面専用スタイル ===== */
+
+/* フォームを囲むコンテナ */
+.search-form-container {
+    padding: 40px 80px;
+    display: flex;
+    align-items: center;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 入力欄とボタンの間隔 */
+}
+
+/* 入力フォームのデザイン */
+.search-input {
+    width: 250px;
+    height: 40px;
+    padding: 0 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+}
+
+/* プレースホルダー */
+.search-input::placeholder {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.search-input:focus {
+    border-color: #1e73be;
+}
+
+/* 検索ボタン（画像ボタン）のリセット */
+.search-btn-img {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.search-btn-img:hover {
+    opacity: 0.7;
+}
+
+.search-btn-img img {
+    width: 40px; /* アイコンのサイズ */
+    height: 40px;
+    display: block;
+}
+
+/* ユーザー一覧のボタンサイズ固定 */
+.search-btn-size {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;       /* ボタンの横幅を固定 */
+    height: 35px;      /* ボタンの高さを画像に合わせて調整 */
+    padding: 0 !important; /* 内側の余白をリセット */
+    font-size: 14px;    /* 文字を少し小さく */
+    border-radius: 5px !important; /* 角丸を画像に合わせる */
+    text-decoration: none;
+}
+
+/* ホバー時の装飾リセット（青・赤の維持） */
+.btn-primary.search-btn-size:hover {
+    background-color: #3e9adb !important;
+    opacity: 0.8;
+}
+
+.btn-danger.search-btn-size:hover {
+    background-color: #ef4444 !important;
+    opacity: 0.8;
+}
+
+/* フォーム下の区切り線 */
+.search-separator {
+    border: none;
+    border-top: 5px solid #ddd;
+    margin: 0;
+}
+
+/* 検索ワード表示のスタイル */
+.search-word-display {
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ユーザー一覧のレイアウト */
+.user-list-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+/* ユーザー検索画面全体の余白調整 */
+.user-list-wrapper {
+    width: 60%;         /* サイドバーを避けるための幅指定 */
+    margin: 50px auto;  /* 中央寄せ */
+}
+
+/* 各ユーザー行の横並び設定 */
+.user-item-flex {
+    display: flex;
+    justify-content: space-between; /* 両端に寄せる */
+    align-items: center;
+    margin: 0 auto 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* アイコンと名前をセットで横並びに */
+.user-info-side {
+    display: flex;
+    align-items: center;
+    gap: 20px;         /* アイコンと名前の距離 */
+    min-width: 200px;
+}
+
+.user-info-side .user-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.btn {
+    border-radius: 5px !important;
+    font-weight: bold;
+}
+
+.user-name {
+    font-size: 18px;
+}
+
+/* ボタンのスタイル微調整 */
+.btn-primary {
+    background-color: #3e9adb !important;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #ef4444 !important;
+    border: none;
+}
+
+.px-4 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+}
+
+/* フォローリスト上部のコンテナ */
+.follow-header {
+    display: flex;
+    align-items: flex-start; /* 上揃え */
+    padding: 30px 40px;
+    gap: 30px; /* タイトルとアイコン一覧の間隔 */
+}
+
+/* 「フォローリスト」の文字スタイル */
+.follow-title {
+    font-size: 20px;
+    white-space: nowrap; /* 改行させない */
+    margin-top: 5px;
+}
+
+/* アイコン一覧のエリア */
+.follow-icon-list {
+    display: flex;
+    flex-wrap: wrap; /* アイコンが多い場合に自動で折り返す */
+    gap: 15px;      /* アイコン同士の隙間 */
+    max-width: 800px; /* サイドバーにぶつからない程度の幅 */
+}
+
+/* 一覧用のアイコンサイズ調整 */
+.follow-icon-list .user-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.follow-icon-list .user-icon:hover {
+    transform: scale(1.1); /* ホバー時に少し大きくする */
+}

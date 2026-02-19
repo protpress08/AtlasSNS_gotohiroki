@@ -1,19 +1,37 @@
 <x-logout-layout>
 
-  <!-- 適切なURLを入力してください -->
-  {!! Form::open(['url' => '〇〇']) !!}
 
-  <p>AtlasSNSへようこそ</p>
+<div class="login-box">
+  @if ($errors->any())
+    <ul class="error">
+      @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  @endif
 
-  {{ Form::label('email') }}
-  {{ Form::text('email',null,['class' => 'input']) }}
-  {{ Form::label('password') }}
-  {{ Form::password('password',['class' => 'input']) }}
+  {!! Form::open(['route' => 'login', 'method' => 'post']) !!}
+  @csrf
 
-  {{ Form::submit('ログイン') }}
+  <p class="welcome-text">AtlasSNSへようこそ</p>
 
-  <p><a href="register">新規ユーザーの方はこちら</a></p>
+  <div class="input-group">
+    {{ Form::label('email', 'メールアドレス') }}
+    {{ Form::email('email', old('email'), ['class' => 'input']) }}
+  </div>
+
+  <div class="input-group">
+    {{ Form::label('password', 'パスワード') }}
+    {{ Form::password('password', ['class' => 'input']) }}
+  </div>
+
+  <div class="submit-container">
+    {{ Form::submit('ログイン', ['class' => 'btn-red']) }}
+  </div>
+
+  <p class="register-link"><a href="{{ route('register') }}">新規ユーザーの方はこちら</a></p>
 
   {!! Form::close() !!}
+</div>
 
 </x-logout-layout>

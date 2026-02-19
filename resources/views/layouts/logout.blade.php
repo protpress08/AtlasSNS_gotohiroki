@@ -21,17 +21,20 @@
         <link rel="icon" href="画像URL" sizes="62x62" type="image/png" />
         <!--iphoneのアプリアイコン指定-->
         <link rel="apple-touch-icon-precomposed" href="画像のURL" />
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
-        <header>
-            <h1><img src="images/atlas.png"></h1>
-            <p>Social Network Service</p>
-        </header>
-        <div id="container">
-            {{ $slot }}
+        <div class="login-wrapper">
+            <header class="logout-header">
+                <h1 class="logout-logo"><img src="{{ asset('images/atlas.png') }}" alt="Atlas"></h1>
+                <p class="logout-sub-text">Social Network Service</p>
+            </header>
+
+            <div id="container">
+                {{ $slot }}
+            </div>
         </div>
-        <script src="{{ asset('js/app.js') }}"></script>
-        <script src="JavaScriptファイルのURL"></script>
-        <script src="JavaScriptファイルのURL"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="{{ asset('js/script.js') }}"></script>
     </body>
 </html>

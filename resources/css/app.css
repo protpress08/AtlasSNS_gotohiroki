@@ -153,7 +153,7 @@
 }
 
 .register-link a:hover {
-  text-decoration: underline;
+  text-decoration: none;
   opacity: 1;
 }
 
@@ -184,17 +184,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
-    padding: 10px 40px;
-    background-color: #1e73be; /* ヘッダーの青色 */
+    height: 70px;
+    padding: 0 40px;
+    background-color: #1e73be;
     position: relative;
     z-index: 1000;
 }
 
 /* ロゴ画像のサイズ調整 */
 .logo img {
-    height: 50px;
+    height: 40px;
     width: auto;
+    vertical-align: middle;
 }
 
 /* ===== サイドバーのデザイン ===== */
@@ -203,20 +204,59 @@
     background-color: white;
 }
 
+/* サイドバー内のリンク共通設定 */
+#side-bar a {
+    text-decoration: none;
+}
+
+.btn-primary, 
+.follow-list-btn, 
+.user-search-btn {
+    text-decoration: none !important;
+    color: #fff;
+    display: inline-block;
+    transition: opacity 0.2s;
+}
+
+/* ホバーした時の挙動 */
+.btn-primary:hover,
+.follow-list-btn:hover,
+.user-search-btn:hover {
+    text-decoration: none;
+    opacity: 0.8;
+    color: #fff;
+}
+
 #confirm {
     padding: 20px;
 }
 
+.side-user-name {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* フォロー・フォロワーの各ブロック */
+.side-group {
+    margin-bottom: 25px;
+}
+
+/* 「フォロー数」と「〇〇人」を左右に振り分ける */
 .side-content {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    padding: 0 10px;
+    justify-content: space-between; /* 両端に配置 */
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 0 5px;
+}
+
+.side-content p {
+    font-size: 15px;
+    margin: 0;
 }
 
 .side-btn-container {
     text-align: right;
-    margin-bottom: 20px;
 }
 
 .side-search-container {
@@ -231,8 +271,8 @@
     background-color: #1e73be;
     color: white;
     text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 8px 18px;
+    border-radius: 6px;
     font-size: 14px;
     transition: background-color 0.2s;
 }
@@ -242,18 +282,25 @@
     color: white;
 }
 
-/* ユーザー検索ボタンだけ少し大きくする */
+.side-search-container {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
 .search-btn {
-    width: 80%;
+    width: 85%;
     padding: 12px 0;
+    font-weight: bold;
 }
 
 /* ユーザーエリアの配置 */
 .nav-user {
-    position: relative;
     display: flex;
     align-items: center;
-    height: 100%; /* 親の高さに合わせる */
+    position: relative;
+    height: 100%;
 }
 
 .nav-trigger {
@@ -262,24 +309,31 @@
     gap: 15px;
     cursor: pointer;
     color: white;
+    height: 100%;
 }
 
-/* 矢印のデザイン（CSSで作成） */
+.username {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* 矢印の基本デザイン（下向き ∨ ） */
 .arrow {
     display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-top: 3px solid white;
-    border-right: 3px solid white;
-    transform: rotate(135deg); /* 下向き固定 */
-    margin-bottom: 5px;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    margin: 0 10px;
+    transition: none;
 }
 
 /* 表示時の矢印 */
 .arrow.open {
-    transform: rotate(-45deg); /* 上向き */
-    margin-top: 10px;
-    margin-bottom: 0;
+    transform: rotate(-135deg);
+    margin-top: 8px;
 }
 
 /* ユーザーアイコン（画像右側の丸いアイコン） */
@@ -289,19 +343,27 @@
     border-radius: 50%;
 }
 
+/* ヘッダー内ユーザーアイコン */
+.nav-trigger .user-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0;
+}
 /* ===== ドロップダウンメニューの枠 ===== */
+
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    right: -40px;
     width: 200px;
-    background-color: white;
+    background-color: white !important; /* 強制的に白 */
     border: 1px solid #1e73be;
     list-style: none;
     padding: 0;
     margin: 0;
     z-index: 9999;
-    display: block !important; 
+    display: block !important;
 }
 
 /* Alpine.jsのx-showが効くように */
@@ -309,64 +371,56 @@
     display: none !important;
 }
 
-/* 各項目のスタイル */
+/* 各項目の高さと中央寄せを確実に実行 */
 .dropdown-menu li {
     width: 100%;
+    height: 60px;
     border-bottom: 1px solid #1e73be;
-    display: block; /* flex から block に変更 */
+    display: block; /* 確実にブロック要素に */
 }
 
-/* フォームの設定：余計な隙間をゼロにする */
-.logout-form {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: block;
+.dropdown-menu li:last-child {
+    border-bottom: none;
 }
 
-/* --- リンクとボタンの基本スタイル --- */
+/* リンクとボタンをど真ん中に配置 */
 .dropdown-menu a,
 .dropdown-menu button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 60px;
-    text-align: center;
-    text-decoration: none;
-    color: #1e73be;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: white !important; /* 基本は白 */
+    color: #1e73be !important;          /* 文字は青 */
     font-size: 16px;
-    background-color: white;
-    border: none;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;                       /* ボタンの枠線を消す */
     cursor: pointer;
-    box-sizing: border-box;
-    font-family: inherit;
-    transition: all 0.2s;
-    /* line-height: 60px;  ← これは削除するかコメントアウトしてください */
+    transition: background-color 0.2s, color 0.2s;
+    padding: 0;
+    margin: 0;
 }
 
-/* --- ホバー時の挙動 --- */
+/* ホバー時（マウスを乗せた時）の設定 */
 .dropdown-menu a:hover,
 .dropdown-menu button:hover {
-    background-color: #1e73be !important;
-    color: white !important;
+    background-color: #1e73be !important; /* 背景を青に */
+    color: white !important;             /* 文字を白に */
 }
 
-/* --- 現在のページのスタイル（アクティブ） --- */
-.dropdown-menu li.active a {
-    background-color: #1e73be;
-    color: white !important;
-}
-
-/* アクティブな状態でホバーした時 */
-.dropdown-menu li.active a:hover {
-    background-color: #0b3c8c !important;
-}
-
-/* ログアウトフォームのマージンリセット */
 .logout-form {
-    margin: 0;
-    padding: 0;
+color: white !important; /* 文字を白に */	width: 100%;
+height: 100%;
+margin: 0 !important;
+padding: 0 !important;
+}
+
+/* これが残っているとHOMEだけ青くなるので、無効化します */
+.dropdown-menu li.active a {
+    background-color: white !important;
+    color: #1e73be !important;
 }
 
 [x-cloak] {
@@ -422,8 +476,9 @@
 .post-submit-btn {
     background: none;
     border: none;
+    padding: 0;
     cursor: pointer;
-    transition: opacity 0.2s;
+    outline: none;
 }
 
 .post-submit-btn:hover {
@@ -431,8 +486,10 @@
 }
 
 .post-submit-btn img {
-    width: 50px; /* 紙飛行機アイコンのサイズ */
+    width: 45px;
     height: auto;
+    display: block;
+    transition: transform 0.2s;
 }
 
 .error-message {
@@ -507,11 +564,38 @@
     width: 60%;
     border-radius: 10px;
 }
+
 .modal_post {
     width: 100%;
-    height: 100px;
-    border: 1px solid #ddd;
-    padding: 10px;
+    height: 150px;
+    padding-top: 5px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    display: block;
+    box-sizing: border-box;
+}
+
+.modal_btn_area {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.modal_edit_submit {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s;
+}
+
+.modal_edit_submit img {
+    width: 50px;
+    height: auto;
 }
 
 /* 削除アイコンのホバー設定 */
@@ -604,11 +688,11 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 120px;       /* ボタンの横幅を固定 */
-    height: 35px;      /* ボタンの高さを画像に合わせて調整 */
-    padding: 0 !important; /* 内側の余白をリセット */
-    font-size: 14px;    /* 文字を少し小さく */
-    border-radius: 5px !important; /* 角丸を画像に合わせる */
+    width: 120px;
+    height: 35px;
+    padding: 0 !important;
+    font-size: 14px;
+    border-radius: 5px !important;
     text-decoration: none;
 }
 
@@ -734,4 +818,193 @@
 
 .follow-icon-list .user-icon:hover {
     transform: scale(1.1); /* ホバー時に少し大きくする */
+}
+
+/* ===== 他ユーザープロフィール（ヘッダー） ===== */
+
+.other-profile-container {
+    padding: 40px 60px;
+    border-bottom: 8px solid #ddd;
+    background-color: white;
+}
+
+.other-profile-flex {
+    display: flex;
+    align-items: flex-start; /* 上揃え */
+    position: relative;
+}
+
+.user-icon-area .user-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 40px;
+}
+
+/* 情報表示のコンテナ */
+.profile-details {
+    flex-grow: 1;
+}
+
+/* ユーザー名と自己紹介の各行 */
+.profile-row {
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.profile-row:last-child {
+    margin-bottom: 0;
+}
+
+/* 「ユーザー名」「自己紹介」のラベル部分 */
+.profile-label {
+    width: 150px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* 名前や自己紹介文の本体 */
+.profile-content {
+    font-size: 18px;
+    color: #333;
+    flex: 1;
+}
+
+/* ボタンを右端に配置 */
+.profile-btn-area {
+    margin-left: 40px;
+    align-self: flex-end;
+}
+
+/* 投稿一覧内の装飾微調整 */
+.post-item-content .username {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.post-item-content .post-date {
+    color: #999;
+    font-size: 14px;
+}
+
+.profile-container {
+    width: 90%;
+    margin: 50px auto;
+}
+
+.profile-item {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.profile-input-group {
+    flex: 1;
+    max-width: 800px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.form-row label {
+    width: 150px;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 300px;
+    padding: 8px;
+    background-color: #efefef;
+    border: 1px solid #aaa;
+    font-size: 14px;
+}
+
+/* ボタンを中央に配置するエリア */
+.profile-submit-area {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    width: 100%;
+}
+
+/* 更新ボタン自体のスタイル */
+.update-btn {
+    background-color: #e54d5c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* ホバー時に色を少し変える */
+.update-btn:hover {
+    background-color: #d43f4d;
+}
+
+/* ファイル入力エリアの外枠（グレーの長方形） */
+.file-input-wrapper {
+    width: 300px;
+    height: 100px;
+    background-color: #efefef;
+    border: 1px solid #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* 「ファイルを選択」ボタン部分 */
+.custom-file-btn {
+    background-color: #fff;
+    color: #888;
+    padding: 8px 25px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: normal;
+    display: inline-block;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ホバー時に少し色を変えてクリック感を出す */
+.file-input-wrapper:hover .custom-file-btn {
+    background-color: #f8f8f8;
+    color: #666;
+}
+
+/* プレビュー画像が挿入された時のスタイル */
+.file-input-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* 実際のファイル選択（ブラウザ標準の「ファイルを選択」ボタン）を完全に隠す */
+.file-control-hidden {
+    display: none;
+}
+
+/* 中央の白いボタン部分 */
+.custom-file-upload {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 30px;
+    cursor: pointer;
+    color: #888;
+    font-size: 14px;
+    display: inline-block;
+}
+
+/* 実際のファイル選択（ブラウザ標準）を隠す */
+.file-control {
+    display: none;
 }

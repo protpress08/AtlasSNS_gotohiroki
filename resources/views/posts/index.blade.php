@@ -39,13 +39,20 @@
             <div class="post-item">
                 {{-- 左側：ユーザーアイコン --}}
                 <div class="post-item-icon">
-                    <img src="{{ asset('images/' . $post->user->icon_image) }}" class="user-icon" alt="icon">
+                    <a href="{{ route('profile.other', ['id' => $post->user_id]) }}">
+
+                        <img src="{{ asset('images/' . $post->user->icon_image) }}" class="user-icon" alt="icon">
+                    </a>
                 </div>
 
                 {{-- 中央：ユーザー名と投稿内容 --}}
                 <div class="post-item-content">
                     <div class="post-header">
-                        <span class="username">{{ $post->user->username }}</span>
+                        <span class="username">
+                            <a href="{{ route('profile.other', ['id' => $post->user_id]) }}" style="text-decoration: none; color: #333; font-weight: bold;">
+                                {{ $post->user->username }}
+                            </a>
+                        </span>
                         <span class="created-at">{{ $post->created_at->format('Y-m-d H:i') }}</span>
                     </div>
                     <div class="post-body">
@@ -81,9 +88,12 @@
                 @csrf
                 <textarea name="upPost" class="modal_post"></textarea>
                 <input type="hidden" name="id" class="modal_id">
-                <button type="submit" class="modal_update-btn">更新</button>
+                <div class="modal_btn_area">
+                    <button type="submit" class="modal_edit_submit">
+                        <img src="{{ asset('images/edit.png') }}" alt="更新">
+                    </button>
+                </div>
             </form>
-            <a class="js-modal-close" href="">閉じる</a>
         </div>
     </div>
 </x-login-layout>

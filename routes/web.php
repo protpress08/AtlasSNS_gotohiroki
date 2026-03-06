@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/post/{id}/delete', [PostsController::class, 'postDelete'])->name('post.delete');
 
     Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::post('profile/update', [ProfileController::class, 'update'])->name('profile.update');
     Route::get('profile/{id}', [ProfileController::class, 'otherProfile'])->name('profile.other');
 
     Route::get('search', [UsersController::class, 'search'])->name('user.search');

@@ -21,7 +21,9 @@
       <div class="user-item-flex">
         {{-- 左側：アイコンとユーザー名 --}}
         <div class="user-info-side">
-          <img src="{{ asset('images/' . $user->icon_image) }}" class="user-icon" alt="icon">
+          <a href="{{ route('profile.other', ['id' => $user->id]) }}">
+            <img src="{{ asset('images/' . $user->icon_image) }}" class="user-icon" alt="icon">
+          </a>
           <span class="user-name">{{ $user->username }}</span>
         </div>
 

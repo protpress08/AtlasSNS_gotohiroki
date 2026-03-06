@@ -26,7 +26,7 @@
                 <a href="{{ route('profile') }}">プロフィール編集</a>
             </li>
 
-            <li>
+            <li class="logout-item">
                 <form method="POST" action="{{ route('logout') }}" class="logout-form">
                     @csrf
                     <button type="submit">ログアウト</button>

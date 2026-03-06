@@ -27,7 +27,7 @@ class ProfileController extends Controller
      */
     public function update(Request $request): RedirectResponse
     {
-        // 1. バリデーション（条件をすべて反映）
+        // 1. バリデーション
         $request->validate([
             'username' => 'required|string|min:2|max:12', // 2文字以上12文字以内
             'email' => [

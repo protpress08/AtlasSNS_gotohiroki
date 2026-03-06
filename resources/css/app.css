@@ -244,7 +244,7 @@
 /* 「フォロー数」と「〇〇人」を左右に振り分ける */
 .side-content {
     display: flex;
-    justify-content: space-between; /* 両端に配置 */
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
     padding: 0 5px;
@@ -357,7 +357,7 @@
     position: absolute;
     top: 100%;
     width: 200px;
-    background-color: white !important; /* 強制的に白 */
+    background-color: white !important;
     border: 1px solid #1e73be;
     list-style: none;
     padding: 0;
@@ -376,7 +376,7 @@
     width: 100%;
     height: 60px;
     border-bottom: 1px solid #1e73be;
-    display: block; /* 確実にブロック要素に */
+    display: block;
 }
 
 .dropdown-menu li:last-child {
@@ -391,12 +391,12 @@
     justify-content: center !important;
     width: 100% !important;
     height: 100% !important;
-    background-color: white !important; /* 基本は白 */
-    color: #1e73be !important;          /* 文字は青 */
+    background-color: white !important;
+    color: #1e73be !important;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
-    border: none;                       /* ボタンの枠線を消す */
+    border: none;
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
     padding: 0;
@@ -406,12 +406,13 @@
 /* ホバー時（マウスを乗せた時）の設定 */
 .dropdown-menu a:hover,
 .dropdown-menu button:hover {
-    background-color: #1e73be !important; /* 背景を青に */
-    color: white !important;             /* 文字を白に */
+    background-color: #1e73be !important;
+    color: white !important;
 }
 
 .logout-form {
-color: white !important; /* 文字を白に */	width: 100%;
+color: white !important;
+width: 100%;
 height: 100%;
 margin: 0 !important;
 padding: 0 !important;
@@ -431,7 +432,7 @@ padding: 0 !important;
 
 .post-block {
     padding: 30px 80px;
-    border-bottom: 8px solid #ddd; /* フォーム下の太い区切り線 */
+    border-bottom: 8px solid #ddd;
     background-color: white;
 }
 
@@ -440,7 +441,7 @@ padding: 0 !important;
     align-items: flex-start;
     gap: 20px;
     position: relative;
-    padding-bottom: 50px; /* ボタン用の余白 */
+    padding-bottom: 50px;
 }
 
 .user-icon-area .user-icon {
@@ -449,7 +450,7 @@ padding: 0 !important;
 }
 
 .input-area {
-    flex-grow: 1; /* 入力欄を広げる */
+    flex-grow: 1;
 }
 
 .post-textarea {
@@ -512,8 +513,8 @@ padding: 0 !important;
 }
 
 .post-item-content {
-    flex-grow: 1; /* コンテンツエリアを広げる */
-    color: #333; /* 文字色を濃いグレーにする */
+    flex-grow: 1;
+    color: #333;
 }
 .post-header {
     display: flex;
@@ -608,11 +609,11 @@ padding: 0 !important;
 }
 
 .delete-link:hover .trash-icon.default {
-    display: none; /* 通常版を消す */
+    display: none;
 }
 
 .delete-link:hover .trash-icon.hover {
-    display: inline-block; /* ホバー版を出す */
+    display: inline-block;
 }
 
 .trash-icon {
@@ -623,7 +624,6 @@ padding: 0 !important;
 
 /* ===== 編集ボタンのホバー（画像差し替え版） ===== */
 .js-modal-open img:hover {
-    /* 編集ボタンも画像ごと変える場合（srcを強制置換） */
     content: url("../images/edit-h.png");
     cursor: pointer;
 }
@@ -640,7 +640,7 @@ padding: 0 !important;
 .search-form {
     display: flex;
     align-items: center;
-    gap: 10px; /* 入力欄とボタンの間隔 */
+    gap: 10px;
 }
 
 /* 入力フォームのデザイン */
@@ -678,7 +678,7 @@ padding: 0 !important;
 }
 
 .search-btn-img img {
-    width: 40px; /* アイコンのサイズ */
+    width: 40px;
     height: 40px;
     display: block;
 }
@@ -730,14 +730,14 @@ padding: 0 !important;
 
 /* ユーザー検索画面全体の余白調整 */
 .user-list-wrapper {
-    width: 60%;         /* サイドバーを避けるための幅指定 */
-    margin: 50px auto;  /* 中央寄せ */
+    width: 60%;
+    margin: 50px auto;
 }
 
 /* 各ユーザー行の横並び設定 */
 .user-item-flex {
     display: flex;
-    justify-content: space-between; /* 両端に寄せる */
+    justify-content: space-between;
     align-items: center;
     margin: 0 auto 30px;
     width: 100%;
@@ -748,7 +748,7 @@ padding: 0 !important;
 .user-info-side {
     display: flex;
     align-items: center;
-    gap: 20px;         /* アイコンと名前の距離 */
+    gap: 20px;
     min-width: 200px;
 }
 
@@ -787,24 +787,24 @@ padding: 0 !important;
 /* フォローリスト上部のコンテナ */
 .follow-header {
     display: flex;
-    align-items: flex-start; /* 上揃え */
+    align-items: flex-start;
     padding: 30px 40px;
-    gap: 30px; /* タイトルとアイコン一覧の間隔 */
+    gap: 30px;
 }
 
 /* 「フォローリスト」の文字スタイル */
 .follow-title {
     font-size: 20px;
-    white-space: nowrap; /* 改行させない */
+    white-space: nowrap;
     margin-top: 5px;
 }
 
 /* アイコン一覧のエリア */
 .follow-icon-list {
     display: flex;
-    flex-wrap: wrap; /* アイコンが多い場合に自動で折り返す */
-    gap: 15px;      /* アイコン同士の隙間 */
-    max-width: 800px; /* サイドバーにぶつからない程度の幅 */
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 800px;
 }
 
 /* 一覧用のアイコンサイズ調整 */
@@ -817,7 +817,7 @@ padding: 0 !important;
 }
 
 .follow-icon-list .user-icon:hover {
-    transform: scale(1.1); /* ホバー時に少し大きくする */
+    transform: scale(1.1);
 }
 
 /* ===== 他ユーザープロフィール（ヘッダー） ===== */
@@ -830,7 +830,7 @@ padding: 0 !important;
 
 .other-profile-flex {
     display: flex;
-    align-items: flex-start; /* 上揃え */
+    align-items: flex-start;
     position: relative;
 }
 

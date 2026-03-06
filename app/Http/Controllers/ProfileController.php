@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\User;
 use App\Models\Post;
-use Illuminate\Validation\Rule; // バリデーション用に追加
+use Illuminate\Validation\Rule;
 
 class ProfileController extends Controller
 {

@@ -9,7 +9,7 @@
         <div class="nav-trigger" @click="open = !open">
             <span class="username">{{ Auth::user()->username }} さん</span>
             <span class="arrow" :class="{ 'open': open }"></span>
-            <img src="{{ asset('images/icon1.png') }}" class="user-icon">
+            <img src="{{ asset('images/' . Auth::user()->icon_image) }}" class="user-icon">
         </div>
 
         <ul

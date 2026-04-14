@@ -37,36 +37,37 @@
       {{ $slot }}
     </div>
       <div id="side-bar">
-      <div id="confirm">
-        <p class="side-user-name">{{ Auth::user()->username }} さんの</p>
+        <div id="confirm">
+          <p class="side-user-name">{{ Auth::user()->username }} さんの</p>
 
-        {{-- フォロー数セクション --}}
-        <div class="side-group">
-          <div class="side-content">
-            <p>フォロー数</p>
-            <p>{{ Auth::user()->follows()->count() }}人</p>
+          {{-- フォロー数セクション --}}
+          <div class="side-group">
+            <div class="side-content">
+              <p>フォロー数</p>
+              <p>{{ Auth::user()->follows()->count() }}人</p>
+            </div>
+            <div class="side-btn-container">
+              <a href="{{ route('follow.list') }}" class="btn-blue">フォローリスト</a>
+            </div>
           </div>
-          <div class="side-btn-container">
-            <a href="{{ route('follow.list') }}" class="btn-blue">フォローリスト</a>
-          </div>
-        </div>
 
-        {{-- フォロワー数セクション --}}
-        <div class="side-group">
-          <div class="side-content">
-            <p>フォロワー数</p>
-            <p>{{ Auth::user()->followers()->count() }}人</p>
-          </div>
-          <div class="side-btn-container">
-            <a href="{{ route('follower.list') }}" class="btn-blue">フォロワーリスト</a>
-          </div>
-        </div>
+          {{-- フォロワー数セクション --}}
+            <div class="side-group">
+              <div class="side-content">
+                <p>フォロワー数</p>
+                <p>{{ Auth::user()->followers()->count() }}人</p>
+              </div>
+              <div class="side-btn-container">
+                <a href="{{ route('follower.list') }}" class="btn-blue">フォロワーリスト</a>
+              </div>
+            </div>
 
-        <div class="side-search-container">
-          <a href="{{ route('user.search') }}" class="btn-blue search-btn">ユーザー検索</a>
+            <div class="side-search-container">
+              <a href="{{ route('user.search') }}" class="btn-blue search-btn">ユーザー検索</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
     <footer>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

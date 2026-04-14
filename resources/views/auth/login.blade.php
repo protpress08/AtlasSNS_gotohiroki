@@ -1,19 +1,18 @@
 <x-logout-layout>
 
-
 <div class="login-box">
+  {!! Form::open(['route' => 'login', 'method' => 'post']) !!}
+  @csrf
+
+  <p class="welcome-text">AtlasSNSへようこそ</p>
+
   @if ($errors->any())
-    <ul class="error">
+    <ul class="error" style="list-style: none; color: red; padding: 0; margin-bottom: 10px; text-align: center;">
       @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
       @endforeach
     </ul>
   @endif
-
-  {!! Form::open(['route' => 'login', 'method' => 'post']) !!}
-  @csrf
-
-  <p class="welcome-text">AtlasSNSへようこそ</p>
 
   <div class="input-group">
     {{ Form::label('email', 'メールアドレス') }}

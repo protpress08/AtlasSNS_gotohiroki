@@ -64,8 +64,9 @@
                 @if(Auth::id() === $post->user_id)
                 <div class="post-actions">
                     {{-- 編集ボタン --}}
-                    <a href="" class="js-modal-open" post="{{ $post->post }}" post_id="{{ $post->id }}">
-                        <img src="{{ asset('images/edit.png') }}" alt="編集">
+                    <a href="" class="js-modal-open edit-link" post="{{ $post->post }}" post_id="{{ $post->id }}">
+                        <img src="{{ asset('images/edit.png') }}" class="edit-icon default" alt="編集">
+                        <img src="{{ asset('images/edit_h.png') }}" class="edit-icon hover" alt="編集">
                     </a>
 
                     {{-- 削除ボタン --}}

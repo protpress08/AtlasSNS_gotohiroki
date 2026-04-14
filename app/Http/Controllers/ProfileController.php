@@ -22,26 +22,43 @@ class ProfileController extends Controller
         return view('profiles.profile');
     }
 
-    /**
+/**
      * プロフィール更新処理
      */
     public function update(Request $request): RedirectResponse
     {
         // 1. バリデーション
         $request->validate([
-            'username' => 'required|string|min:2|max:12', // 2文字以上12文字以内
+            'username' => 'required|string|min:2|max:12',
             'email' => [
                 'required',
                 'string',
                 'email',
                 'min:5',
-                'max:40', // 5文字以上40文字以内
-                Rule::unique('users', 'email')->ignore(Auth::id()), // 自分のメールアドレスを除外して重複チェック
+                'max:40',
+                Rule::unique('users', 'email')->ignore(Auth::id()),
             ],
-            'password' => 'required|string|alpha_num|min:8|max:20|confirmed', // 英数字のみ8-20文字
-            'password_confirmation' => 'required|string|alpha_num|min:8|max:20', // パスワード一致確認
-            'bio' => 'nullable|string|max:150', // 150文字以内
-            'icon_image' => 'nullable|image|mimes:jpg,png,bmp,gif,svg|max:2048', // 指定の画像形式
+            'password' => 'required|string|alpha_num|min:8|max:20|confirmed',
+            'password_confirmation' => 'required|string|alpha_num|min:8|max:20',
+            'bio' => 'nullable|string|max:150',
+            'icon_image' => 'nullable|image|mimes:jpg,png,bmp,gif,svg|max:2048',
+        ], [
+            // --- 第2引数：カスタムメッセージ ---
+            'required' => ':attributeを入力してください。',
+            'confirmed' => 'パスワードが一致しません。',
+            'min' => ':attributeは:min文字以上で入力してください。',
+            'max' => ':attributeは:max文字以内で入力してください。',
+            'email' => '有効なメールアドレスを入力してください。',
+            'image' => '指定されたファイルが画像ではありません。',
+            'mimes' => ':attributeは :values 形式のファイルを指定してください。',
+        ], [
+            // --- 第3引数：属性名の日本語化 ---
+            'username' => 'ユーザー名',
+            'email' => 'メールアドレス',
+            'password' => 'パスワード',
+            'password_confirmation' => 'パスワード確認',
+            'bio' => '自己紹介',
+            'icon_image' => 'アイコン画像',
         ]);
 
         $user = Auth::user();

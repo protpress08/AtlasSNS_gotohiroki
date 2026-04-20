@@ -10,7 +10,7 @@
   margin-bottom: 40px;
 }
 
-/* ロゴ画像のサイズを大きくし、白っぽく見せる（必要に応じて） */
+/* ロゴ画像のサイズを大きくし、白っぽく見せる */
 .logout-logo img {
   width: 220px;
   height: auto;
@@ -207,7 +207,7 @@
 }
 
 #container {
-    flex: 1; /* メインコンテンツが横幅の残り全てを占める */
+    flex: 1;
 }
 
 #side-bar {
